@@ -43,8 +43,18 @@
       font-size: x-small
     }
 
-    body {
-      background-color: white
+    details {
+      padding: 10px 20px;
+      border: 1px solid grey;
+      margin-block: 1.5em;
+    }
+
+    summary {
+      cursor: pointer;
+    }
+
+    summary:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -209,28 +219,97 @@
     <p>Found a bug? Please <a href="https://github.com/TetraLogical/screen-reader-HTML-support/issues">report it</a>. </p>
     <main class="flow">
       <h2>How HTML elements are supported by screen readers</h2>
-      <p> Typical support patterns of HTML elements by screen readers: </p>
+      <p>
+        Typical HTML element support patterns by screen readers:
+      </p>
       <ul>
-        <li> Identification of an element by role as the user moves
-          through the content. </li>
-        <li> Announcement of the text content of an element. </li>
-        <li> Announcement of the start and end of an element. </li>
-        <li> Change in voice as the content of an element is announced.
+        <li>
+          Announce roles of elements as the user moves through the content
         </li>
-        <li> Announcement of an elements accessible name and/or
-          description </li>
-        <li> Announcement of states and properties. </li>
-        <li> Emission of a beep or other sound when an element with a
-          particular state or property receives <a href="http://juicystudio.com/article/making-ajax-work-with-screen-readers.php#jawsvirtual">virtual focus</a>. </li>
-        <li> Instructions on how to operate interactive elements such as
-          form controls. </li>
-        <li> Navigation of elements by keyboard and “quick access” lists
-          of a particular elements, list items are linked to each
-          instance of an element on the page. </li>
+        <li>
+          Announce accessible names and/or descriptions of controls
+        </li>
+        <li>
+          Announce the text content of elements
+        </li>
+        <li>
+          Announce the start and end of elements
+        </li>
+        <li>
+          Change in voice or pitch as content is announced (e.g. to signify punctuation)
+        </li>
+        <li>
+          Announce states and properties of elements.
+        </li>
+        <li>
+          Emission of a beep or other sound when an element with a particular state or property receives <a href="http://juicystudio.com/article/making-ajax-work-with-screen-readers.php#jawsvirtual">virtual focus</a>
+        </li>
+        <li>
+          Instructions on how to operate interactive elements such as form controls
+        </li>
+        <li>
+          Keyboard navigation, shortcuts and “quick access” lists showing all instances of particular elements on a page
+        </li>
       </ul>
-      <p> <strong>Note:</strong> The combination of patterns supported
-        varies from element to element and support for a particular
-        element varies between screen reader software. </p>
+      <p>
+        <strong>Note:</strong> The combination of patterns supported varies from element to element. Support for (and announcements of) some elements can vary between screen reader software.
+      </p>
+
+      <div class="callout" data-callout-variant="">
+        <p>
+          <strong>VoiceOver</strong> doesn't have a concept of "reading" or "applications" modes like some other screen readers. Instead, it uses a combination of keyboard commands and a "Rotor" menu to navigate and interact with content.
+        </p>
+      </div>
+
+      <details aria-labelledby="quick-commands-h" id="quick-commands">
+        <summary id="quick-commands-h">Mac VoiceOver: quick commands</summary>
+        <p><strong><kbd>VO</kbd> key</strong>: <kbd>Control&nbsp;+&nbsp;Option</kbd></p>
+        <ul>
+          <li>
+            <strong>Start/stop VoiceOver</strong>: <kbd>Command&nbsp;(⌘)&nbsp;+&nbsp;F5</kbd>
+          </li>
+          <li>
+            <strong>Pause/resume announcements</strong>: <kbd>Control</kbd>
+          </li>
+          <li>
+            <strong>Read all content</strong>: <kbd>VO&nbsp;+&nbsp;A</kbd> 
+          </li>
+          <li>
+            <strong>Read next/previous item</strong>: <kbd>VO&nbsp;+&nbsp;→/←</kbd>
+          </li>
+          <li>
+            <strong>Activate a control</strong>: <kbd>VO&nbsp;+&nbsp;Space</kbd>
+          </li>
+          <li>
+            <strong>Open Rotor menu</strong> (list of links, headings, form fields, etc.): <kbd>VO&nbsp;+&nbsp;U</kbd>
+          </li>
+          <li>
+            <strong>Go into/out of objects (tables, iframes, menus etc.)</strong>: <kbd>VO&nbsp;+&nbsp;Shift&nbsp;+&nbsp;↓/↑</kbd>
+          </li>
+          <li>
+            <strong>Next/previous link</strong>: <kbd>VO&nbsp;+&nbsp;Command&nbsp;+&nbsp;L / Shift&nbsp;+&nbsp;L</kbd>
+          </li>
+          <li>
+            <strong>Next/previous heading</strong>: <kbd>VO&nbsp;+&nbsp;Command&nbsp;+&nbsp;H / Shift&nbsp;+&nbsp;H</kbd>
+          </li>
+          <li>
+            <strong>Next/previous form element</strong>: <kbd>VO&nbsp;+&nbsp;Command&nbsp;+&nbsp;J / Shift&nbsp;+&nbsp;J</kbd>
+          </li>
+          <li>
+            <strong>Next/previous table</strong>: <kbd>VO&nbsp;+&nbsp;Command&nbsp;+&nbsp;T / Shift&nbsp;+&nbsp;T</kbd>
+          </li>
+          <li>
+            <strong>Navigate table cells</strong>: <kbd>VO&nbsp;+ Arrow keys (→/←/↓/↑) </kbd>
+          </li>
+          <li>
+            <strong>Next/previous list</strong>: <kbd>VO&nbsp;+&nbsp;Command&nbsp;+&nbsp;X / Shift&nbsp;+&nbsp;X</kbd>
+          </li>
+          <li>
+            <strong>Next/previous graphic</strong>: <kbd>VO&nbsp;+&nbsp;Command&nbsp;+&nbsp;G / Shift&nbsp;+&nbsp;G</kbd>
+          </li>
+        </ul>
+      </details>
+      
       <h2>Support legend</h2>
       <ul>
         <li><svg viewBox="0 0 448 512"
