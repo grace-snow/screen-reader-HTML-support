@@ -39,10 +39,6 @@
       font-weight: bold
     }
 
-    body {
-      background-color: white
-    }
-
     td ul li {
       line-height: 1.5em
     }
@@ -55,6 +51,20 @@
 
     table {
       font-size: x-small
+    }
+
+    details {
+      padding: 10px 20px;
+      border: 1px solid grey;
+      margin-block: 1.5em;
+    }
+
+    summary {
+      cursor: pointer;
+    }
+
+    summary:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -178,13 +188,6 @@
                   fill: CanvasText;
                 }
               }
-
-
-              details {
-                padding: 10px 20px;
-                border: 1px solid grey;
-                margin-block: 1.5em;
-              }
             </style>
             <g>
               <g id="tll-TetraLogical-logotype">
@@ -223,54 +226,100 @@
     </p>
     <main class="flow">
       <h2>How HTML elements are supported by screen readers</h2>
-      <p> Typical support patterns of HTML elements by screen readers: </p>
+      <p>
+        Typical HTML element support patterns by screen readers: 
+      </p>
       <ul>
-        <li> Identification of an element by role as the user moves
-          through the content. </li>
-        <li> Announcement of the text content of an element. </li>
-        <li> Announcement of the start and end of an element. </li>
-        <li> Change in voice as the content of an element is announced. </li>
-        <li> Announcement of an elements accessible name and/or
-          description </li>
-        <li> Announcement of states and properties. </li>
-        <li> Emission of a beep or other sound when an element with a
-          particular state or property receives <a href="http://juicystudio.com/article/making-ajax-work-with-screen-readers.php#jawsvirtual">virtual
-
-
-            focus</a>. </li>
-        <li> Instructions on how to operate interactive elements such as
-          form controls. </li>
-        <li> Navigation of elements by keyboard and “quick access” lists
-          of a particular elements, list items are linked to each
-          instance of an element on the page. </li>
+        <li>
+          Announce roles of elements as the user moves through the content
+        </li>
+        <li>
+          Announce accessible names and/or descriptions of controls
+        </li>
+        <li>
+          Announce the text content of elements 
+        </li>
+        <li> 
+          Announce the start and end of elements
+        </li>
+        <li>
+          Change in voice or pitch as content is announced (e.g. to signify punctuation)
+        </li>
+        <li> 
+          Announce states and properties of elements. 
+        </li>
+        <li> 
+          Emission of a beep or other sound when an element with a particular state or property receives <a href="http://juicystudio.com/article/making-ajax-work-with-screen-readers.php#jawsvirtual">virtual focus</a>
+        </li>
+        <li>
+          Instructions on how to operate interactive elements such as form controls
+        </li>
+        <li>
+          Keyboard navigation, shortcuts and “quick access” lists showing all instances of particular elements on a page
+        </li>
       </ul>
       <p>
-        <strong>Note:</strong> The combination of patterns supported
-        varies from element to element and support for a particular
-        element varies between screen reader software.
+        <strong>Note:</strong> The combination of patterns supported varies from element to element. Support for (and announcements of) some elements can vary between screen reader software.
       </p>
 
-      <details aria-labelledby="narrator-quick-commands-h"
-               id="narrator-quick-commands">
-        <summary id="narrator-quick-commands-h">Windows Narrator: quick commands</summary>
-        <p><strong>Narrator key</strong>: <kbd>Caps Lock</kbd> (or <kbd>Insert</kbd>) by default.</p>
+      <details aria-labelledby="quick-commands-h"  id="quick-commands">
+        <summary id="quick-commands-h">Windows Narrator: quick commands</summary>
+        <p><strong><kbd>Narrator</kbd> key</strong>: <kbd>Caps Lock</kbd> (or <kbd>Insert</kbd>) by default.</p>
         <ul>
-          <li><strong>Start/stop Narrator</strong>: <kbd>Windows&nbsp;+&nbsp;Ctrl&nbsp;+&nbsp;Enter</kbd></li>
-          <li><strong>Toggle Scan mode</strong>: <kbd>Narrator&nbsp;+&nbsp;Space</kbd> <br>Scan mode must be turned
-            <strong>on</strong> to use other keyboard shortcuts.
+          <li>
+            <strong>Start/stop Narrator</strong>: <kbd>Windows&nbsp;+&nbsp;Ctrl&nbsp;+&nbsp;Enter</kbd>
           </li>
-          <li><strong>Links</strong>: <kbd>K</kbd> (next), <kbd>Shift&nbsp;+&nbsp;K</kbd> (previous), <kbd>Narrator&nbsp;+&nbsp;F7</kbd>
-            (list all); <em>Popular links &amp; page summary</em>: <kbd>Narrator&nbsp;+&nbsp;S</kbd> twice</li>
-          <li><strong>Headings</strong>: <kbd>H</kbd> (next), <kbd>Shift&nbsp;+&nbsp;H</kbd> (previous); <em>Headings list</em>:
-            <kbd>Narrator&nbsp;+&nbsp;F6</kbd>
+          <li>
+            <strong>Toggle Scan mode</strong>: <kbd>Narrator&nbsp;+&nbsp;Space</kbd> <br><em>Note, scan mode must be turned
+            <strong>on</strong> to use other keyboard shortcuts</em>
           </li>
-          <li><strong>Landmarks/regions</strong>: <em>Landmarks list</em>: <kbd>Narrator&nbsp;+&nbsp;F5</kbd></li>
-          <li><strong>Forms</strong>: <kbd>E</kbd> (next edit), <kbd>Shift&nbsp;+&nbsp;E</kbd> (previous). Press <kbd>Space</kbd>
-            to turn Scan mode off when you need to type; <kbd>Tab</kbd> to move between form fields</li>
-          <li><strong>Lists &amp; tables</strong>: <kbd>I</kbd> / <kbd>Shift&nbsp;+&nbsp;I</kbd> (next/previous list item);
-            <kbd>,</kbd>/<kbd>.</kbd> to jump to start/end of long lists or tables
+          <li>
+            <strong>List all landmarks/regions</strong>: <kbd>Narrator&nbsp;+&nbsp;F5</kbd>
           </li>
-          <li><strong>Images/graphics</strong>: <kbd>G</kbd> / <kbd>Shift&nbsp;+&nbsp;G</kbd> to move between images</li>
+          <li>
+            Links:
+            <ul>
+              <li>
+                <strong>Next/previous link</strong>:    <kbd>K / Shift&nbsp;+&nbsp;K</kbd>
+              </li>
+              <li>
+                <strong>List all links</strong>: <kbd>Narrator&nbsp;+&nbsp;F7</kbd>
+              </li>
+              <li>
+                <strong>Popular links &amp; page summary:</strong> <kbd>Narrator&nbsp;+&nbsp;S</kbd> <em>twice</em>
+              </li>
+            </ul>
+          </li>
+          <li>
+            Headings:
+            <ul>
+              <li>
+                <strong>Next/previous heading</strong>: <kbd>H / Shift&nbsp;+&nbsp;H</kbd>
+              </li>
+              <li>
+                <strong>List all headings</strong>: <kbd>Narrator&nbsp;+&nbsp;F6</kbd>
+              </li>
+            </ul>
+          <li>
+            <strong>Forms</strong>: <kbd>E</kbd> / <kbd>Shift&nbsp;+&nbsp;E</kbd> (next/previous edit). Press <kbd>Space</kbd> to turn Scan mode off when you need to type; <kbd>Tab</kbd> to move focus between form fields
+          </li>
+          <li>
+            Lists &amp; tables:
+            <ul>
+              <li>
+                <strong>Next/previous list</strong>: <kbd>L</kbd> / <kbd>Shift&nbsp;+&nbsp;L</kbd>
+              </li>
+              <li>
+                <strong>Next/previous list item</strong>: <kbd>I</kbd> / <kbd>Shift&nbsp;+&nbsp;I</kbd>
+              </li>
+              <li>
+                <strong>Jump to start/end of long lists or tables</strong>: <kbd>,</kbd>/<kbd>.</kbd>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Next/previous graphic</strong>: <kbd>G</kbd> / <kbd>Shift&nbsp;+&nbsp;G</kbd>
+          </li>
         </ul>
       </details>
 
@@ -317,13 +366,15 @@ mark"
           </svg> means we are unsure whether this feature is supported, this may be due to lack of testing or lack of
           clarity around what 'support' of this feature is supposed to convey to the user.
         </li>
-        <li><svg aria-label="no"
+        <li>
+          <svg aria-label="no"
                class="no"
                role="img"
                viewbox="0 0 512 512"
                width="20">
             <use href="#no"></use>
-          </svg> means we have found that this feature is not implemented</li>
+          </svg> means we have found that this feature is not implemented
+        </li>
       </ul>
       <div aria-label="Table"
            class="table-wrapper"
@@ -432,10 +483,14 @@ mark"
             <td>An abbreviation</td>
             <td>
               <ul>
-                <li><strong>With <code>title</code> or <code>aria-label</code> attributes:</strong> <em>Expansion,
-                    group, Accronym</em></li>
-                <li><strong>Without <code>title</code> or <code>aria-label</code> attributes:</strong> <em>Accronym</em>
-                  only</li>
+                <li>
+                  <strong>With <code>title</code> or <code>aria-label</code> attributes:</strong> <em>Expansion,
+                    group, Accronym</em>
+                </li>
+                <li>
+                  <strong>Without <code>title</code> or <code>aria-label</code> attributes:</strong> <em>Accronym</em>
+                  only
+                </li>
               </ul>
             </td>
             <td>
@@ -2707,8 +2762,12 @@ No test
             <td>List item</td>
             <td>
               <ul>
-                <li><strong>Unordered list item</strong>: Bullet", <em>list item content</em></li>
-                <li><strong>Ordered list item</strong>: "Item number", <em>list item content</em></li>
+                <li>
+                  <strong>Unordered list item</strong>: Bullet", <em>list item content</em>
+                </li>
+                <li>
+                  <strong>Ordered list item</strong>: "Item number", <em>list item content</em>
+                </li>
               </ul>
             </td>
             <td>
@@ -2811,8 +2870,12 @@ No test
             <td>Highlight</td>
             <td>
               <ul>
-                <li><strong>With accessible name</strong>: "Highlight", <em>accessible name</em> (continue reading command) <em>element content</em></li>
-                <li><strong>Without accessible name</strong>: <em>Element content</em></li>
+                <li>
+                  <strong>With accessible name</strong>: "Highlight", <em>accessible name</em> (continue reading command) <em>element content</em>
+                </li>
+                <li>
+                  <strong>Without accessible name</strong>: <em>Element content</em>
+                </li>
               </ul>
             </td>
             <td>No special commands</td>
@@ -2827,8 +2890,12 @@ No test
             </td>
             <td>
               <ul>
-                <li><strong>Chrome and Edge</strong>: No semantics conveyed unless the <code>&lt;mark&gt;</code> element is given an accessible name.</li>
-                <li><strong>Firefox</strong>: No semantics conveyed.</li>
+                <li>
+                  <strong>Chrome and Edge</strong>: No semantics conveyed unless the <code>&lt;mark&gt;</code> element is given an accessible name.
+                </li>
+                <li>
+                  <strong>Firefox</strong>: No semantics conveyed.
+                </li>
               </ul>
             </td>
           </tr>
@@ -2900,11 +2967,13 @@ No test
             <td>Gauge</td>
             <td>
               <ul>
-                <li><strong>With accessible name</strong>: <em>Accessible name content</em><br />
+                <li>
+                  <strong>With accessible name</strong>: <em>Accessible name content</em><br />
                   &ndash;pause&ndash;<br />
                   <em>Description</em> (if present), "Current value: <em>value</em>", "Minimum value: <em>min value</em>", "Maximum value: <em>max value</em>"
                 </li>
-                <li><strong>Without accessible name</strong>: "Meter"<br />
+                <li>
+                  <strong>Without accessible name</strong>: "Meter"<br />
                   &ndash;pause&ndash;<br />
                   <em>Description</em> (if present), "Current value: <em>value</em>", "Minimum value: <em>min value</em>", "Maximum value: <em>max value</em>"
                 </li>
@@ -2995,8 +3064,10 @@ No test
                 <li>Next Object Tag <kbd>O</kbd> (in &lt; Windows Narrator2018)</li>
                 <li>Previous Object Tag <kbd>SHIFT&nbsp;+&nbsp;O</kbd> (in &lt;
                   Windows Narrator2018)</li>
-                <li><strong>note:</strong> No navigation keys in Windows Narrator
-                  2018 &gt;</li>
+                <li>
+                  <strong>note:</strong> No navigation keys in Windows Narrator
+                  2018 &gt;
+                </li>
               </ul>
             </td>
             <td>
@@ -3023,8 +3094,12 @@ No test
             <td>Ordered list</td>
             <td>
               <ul>
-                <li><strong>With accessible name</strong>: "Number", <em>accessible name content</em></li>
-                <li><strong>Without accessible name</strong>: "List"</li>
+                <li>
+                  <strong>With accessible name</strong>: "Number", <em>accessible name content</em>
+                </li>
+                <li>
+                  <strong>Without accessible name</strong>: "List"
+                </li>
               </ul>
             </td>
             <td>
@@ -3479,8 +3554,12 @@ No test
             <td>Generic document or application section</td>
             <td>
               <ul>
-                <li><strong>With accessible name</strong>: <em>Accessible name</em>, "region landmark"</li>
-                <li><strong>Without accessible name</strong>: <em>Element content</em></li>
+                <li>
+                  <strong>With accessible name</strong>: <em>Accessible name</em>, "region landmark"
+                </li>
+                <li>
+                  <strong>Without accessible name</strong>: <em>Element content</em>
+                </li>
               </ul>
             </td>
             <td>
@@ -3765,8 +3844,12 @@ No test
             <td>Data table</td>
             <td>
               <ul>
-                <li><strong>Simple table:</strong> <em>Caption content</em> (if present), "table", "[# rows] by [# columns]" (e.g. "4 by 8")</li>
-                <li><strong>Complex table:</strong> <em>Caption content</em> (if present), "non-uniform table", "[# rows] by [# columns]" (e.g. "10 by 6")</li>
+                <li>
+                  <strong>Simple table:</strong> <em>Caption content</em> (if present), "table", "[# rows] by [# columns]" (e.g. "4 by 8")
+                </li>
+                <li>
+                  <strong>Complex table:</strong> <em>Caption content</em> (if present), "non-uniform table", "[# rows] by [# columns]" (e.g. "10 by 6")
+                </li>
               </ul>
             </td>
             <td>
@@ -4140,8 +4223,12 @@ No test
             <td>Unordered List</td>
             <td>
               <ul>
-                <li><strong>With accessible name</strong>: "Bullet", <em>accessible name content</em>, <em>description</em> (if present and correctly linked)</li>
-                <li><strong>Without accessible name</strong>: "List", <em>description</em> (if present and correctly linked)</li>
+                <li>
+                  <strong>With accessible name</strong>: "Bullet", <em>accessible name content</em>, <em>description</em> (if present and correctly linked)
+                </li>
+                <li>
+                  <strong>Without accessible name</strong>: "List", <em>description</em> (if present and correctly linked)
+                </li>
               </ul>
             </td>
             <td>
