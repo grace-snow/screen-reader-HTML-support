@@ -223,7 +223,25 @@
       <dd> Please <a href="https://github.com/TetraLogical/screen-reader-HTML-support/issues">report it</a>.</dd>
     </dl>
 
-    <h2>How HTML elements are supported by screen readers</h2>
+    <div class="callout" data-callout-variant="bold">
+      <h2 class="text-step-1">Table of contents</h2>
+      <ul>
+        <li><a href="#how-html-elements-are-supported-by-screen-readers">How HTML elements are supported by screen readers</a></li>
+        <li><a href="#about-voiceover-on-ios">About VoiceOver on iOS</a>
+          <ul>
+            <li><a href="#quick-commands">iOS VoiceOver: quick commands</a></li>
+          </ul>
+        </li>
+        <li><a href="#html-support">HTML Support</a>
+          <ul>
+            <li><a href="#support-legend">Support legend</a></li>
+            <li><a href="#support-matrix">Support matrix</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <h2 id="how-html-elements-are-supported-by-screen-readers">How HTML elements are supported by screen readers</h2>
     <p>
       Typical HTML element support patterns by screen readers:
     </p>
@@ -258,6 +276,11 @@
     </ul>
     <p>
       <strong>Note:</strong> The combination of patterns supported varies from element to element. Support for (and announcements of) some elements can vary between screen reader software.
+    </p>
+
+    <h2 id="about-voiceover-on-ios">About VoiceOver on iOS</h2>
+    <p>
+      VoiceOver is the built-in screen reader on iOS. It is available on all iPhones and iPads, and can be used with Safari and other browsers.
     </p>
 
     <details aria-labelledby="quick-commands-h"
@@ -304,7 +327,8 @@
       </p>
     </details>
 
-    <h2>Support legend</h2>
+    <h2 id="html-support">HTML Support</h2>
+    <h3 id="support-legend">Support legend</h3>
     <ul>
       <li>
         <svg viewBox="0 0 448 512"
@@ -346,10 +370,10 @@
 
     <div class="table-wrapper"
          role="region"
-         aria-label="Table"
+         aria-label="Support matrix"
          tabindex="0">
 
-      <h3>VoiceOver on iOS HTML Support Table </h3>
+      <h3 id="support-matrix">VoiceOver on iOS HTML Support Table </h3>
       <table>
         <caption> VoiceOver on iOS HTML Support - iOS 18.6.2 testing on Safari</caption>
         <thead>
