@@ -223,7 +223,25 @@
       <dd> Please <a href="https://github.com/TetraLogical/screen-reader-HTML-support/issues">report it</a>.</dd>
     </dl>
 
-    <h2>How HTML elements are supported by screen readers</h2>
+    <div class="callout" data-callout-variant="bold">
+      <h2 class="text-step-1">Table of contents</h2>
+      <ul>
+        <li><a href="#how-html-elements-are-supported-by-screen-readers">How HTML elements are supported by screen readers</a></li>
+        <li><a href="#about-voiceover-on-mac">About VoiceOver on Mac</a>
+          <ul>
+            <li><a href="#quick-commands">Mac VoiceOver: quick commands</a></li>
+          </ul>
+        </li>
+        <li><a href="#html-support">HTML Support</a>
+          <ul>
+            <li><a href="#support-legend">Support legend</a></li>
+            <li><a href="#support-matrix">Support matrix</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <h2 id="how-html-elements-are-supported-by-screen-readers">How HTML elements are supported by screen readers</h2>
     <p>
       Typical HTML element support patterns by screen readers:
     </p>
@@ -260,6 +278,10 @@
       <strong>Note:</strong> The combination of patterns supported varies from element to element. Support for (and announcements of) some elements can vary between screen reader software.
     </p>
 
+    <h2 id="about-voiceover-on-mac">About VoiceOver on Mac</h2>
+    <p>
+      VoiceOver is the built-in screen reader on macOS. It is available on all Mac computers and although it is designed to work with Safari can be used with Chrome and Firefox.
+    </p>
     <div class="callout"
          data-callout-variant="">
       <p>
@@ -317,7 +339,8 @@
       </ul>
     </details>
 
-    <h2>Support legend</h2>
+    <h2 id="html-support">HTML support</h2>
+    <h3 id="support-legend">Support legend</h3>
     <ul>
       <li>
         <svg viewBox="0 0 448 512"
@@ -361,9 +384,10 @@
     
     <div class="table-wrapper"
          role="region"
-         aria-label="Table"
-         tabindex="0">
-         <h3>VoiceOver on Mac HTML Support Table</h3>
+         aria-label="Support matrix"
+         tabindex="0"
+         id="support-matrix">
+         <h3>VoiceOver on Mac HTML support table</h3>
       <table>
         <caption>VoiceOver on Mac (2024) HTML Support - Sequoia 15.5 and tested on Safari Version 18.5 and Chrome Version 139.0.7258.66 (and double checked some on Firefox 142.0.1)</caption>
         <thead>

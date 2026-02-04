@@ -223,70 +223,67 @@
       <dd>Please <a href="https://github.com/TetraLogical/screen-reader-HTML-support/issues">report it</a>.</dd>
     </dl>
 
-    <section aria-labelledby="orca-quick-commands-h"
-             id="orca-quick-commands">
-      <h2 id="orca-quick-commands-h">Orca: quick commands</h2>
-      <p><strong>Orca modifier</strong>: <em>Insert</em> (or <em>Caps Lock</em>, configurable).</p>
-      <ul>
-        <li><strong>Learn mode</strong>: Orca+H (press again to exit)</li>
-        <li><strong>Toggle Structural Navigation</strong>: Orca+Z</li>
-        <li><strong>Browse/Focus mode (forms)</strong>: Orca+A</li>
-        <li><strong>Headings</strong>: H / Shift+H; level: 1–6 / Shift+1–6; lists: Alt+Shift+H or Alt+Shift+1–6</li>
-        <li><strong>Links</strong>: K / Shift+K; lists: Alt+Shift+K (visited: V / unvisited: U; lists: Alt+Shift+V / Alt+Shift+U)</li>
-        <li><strong>Landmarks</strong>: M / Shift+M; list: Alt+Shift+M</li>
-        <li><strong>Lists</strong>: L / Shift+L; list items: I / Shift+I; lists: Alt+Shift+L / Alt+Shift+I</li>
-        <li><strong>Tables</strong>: T / Shift+T; table cell nav: Alt+Shift+arrow keys; start/end: Alt+Shift+Home/End</li>
-        <li><strong>Images</strong>: G / Shift+G; list: Alt+Shift+G</li>
-        <li><strong>Paragraphs</strong>: P / Shift+P; list: Alt+Shift+P</li>
-        <li><strong>Clickable</strong>: A / Shift+A; list: Alt+Shift+A</li>
-      </ul>
-      <p><strong>Best pairing:</strong> Firefox on GNOME. Structural navigation is fully supported in Firefox; Chromium-based browsers may vary.</p>
-    </section>
-    
-    
-      <h2>How HTML elements are supported by screen readers</h2>
-      <p>
-        Typical HTML element support patterns by screen readers:
-      </p>
-      <ul>
-        <li>
-          Announce roles of elements as the user moves through the content
-        </li>
-        <li>
-          Announce accessible names and/or descriptions of controls
-        </li>
-        <li>
-          Announce the text content of elements
-        </li>
-        <li>
-          Announce the start and end of elements
-        </li>
-        <li>
-          Change in voice or pitch as content is announced (e.g. to signify punctuation)
-        </li>
-        <li>
-          Announce states and properties of elements.
-        </li>
-        <li>
-          Emission of a beep or other sound when an element with a particular state or property receives <a href="http://juicystudio.com/article/making-ajax-work-with-screen-readers.php#jawsvirtual">virtual focus</a>
-        </li>
-        <li>
-          Instructions on how to operate interactive elements such as form controls
-        </li>
-        <li>
-          Keyboard navigation, shortcuts and “quick access” lists showing all instances of particular elements on a page
-        </li>
-      </ul>
-      <p>
-        <strong>Note:</strong> The combination of patterns supported varies from element to element. Support for (and announcements of) some elements can vary between screen reader software.
-      </p>
+        <div class="callout"
+             data-callout-variant="bold">
+          <h2 class="text-step-1">Table of contents</h2>
 
-      <h2>About Orca</h2>
-      <p>
-        Orca is a free, open source screen reader for Linux. It is part of the GNOME desktop environment, but can also be used with other desktop environments. Orca supports a variety of applications, including web browsers, office suites, and email clients.
-      </p>
-      
-      <h2>Support legend</h2>
+
+      <ul>
+        <li><a href="#how-html-elements-are-supported-by-screen-readers">How HTML elements are supported by screen readers</a></li>
+        <li><a href="#about-orca">About Orca</a>
+        </li>
+        <li><a href="#html-support">HTML Support</a>
+          <ul>
+            <li><a href="#support-legend">Support legend</a></li>
+            <li><a href="#support-matrix">Support matrix</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <h2 id="how-html-elements-are-supported-by-screen-readers">How HTML elements are supported by screen readers</h2>
+    <p>
+      Typical HTML element support patterns by screen readers:
+    </p>
+    <ul>
+      <li>
+        Announce roles of elements as the user moves through the content
+      </li>
+      <li>
+        Announce accessible names and/or descriptions of controls
+      </li>
+      <li>
+        Announce the text content of elements
+      </li>
+      <li>
+        Announce the start and end of elements
+      </li>
+      <li>
+        Change in voice or pitch as content is announced (e.g. to signify punctuation)
+      </li>
+      <li>
+        Announce states and properties of elements.
+      </li>
+      <li>
+        Emission of a beep or other sound when an element with a particular state or property receives <a href="http://juicystudio.com/article/making-ajax-work-with-screen-readers.php#jawsvirtual">virtual focus</a>
+      </li>
+      <li>
+        Instructions on how to operate interactive elements such as form controls
+      </li>
+      <li>
+        Keyboard navigation, shortcuts and "quick access" lists showing all instances of particular elements on a page
+      </li>
+    </ul>
+    <p>
+      <strong>Note:</strong> The combination of patterns supported varies from element to element. Support for (and announcements of) some elements can vary between screen reader software.
+    </p>
+
+    <h2 id="about-orca">About Orca</h2>
+    <p>
+      Orca is a free and open source screen reader for Linux. It is part of the GNOME desktop environment and works best with Firefox.
+    </p>
+
+      <h3 id="support-legend">Support legend</h3>
       <ul>
         <li>
           <svg aria-label="yes"
@@ -327,11 +324,12 @@
         </li>
       </ul>
       
-      <div aria-label="Table"
+      <div aria-label="Support matrix"
            class="table-wrapper"
            role="region"
-           tabindex="0">
-        <h3>Orca HTML Support Table</h3>
+           tabindex="0"
+           id="support-matrix">
+        <h3>Orca HTML support table</h3>
         <table>
           <caption>
             Orca (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) on Windows 11

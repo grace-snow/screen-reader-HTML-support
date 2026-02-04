@@ -230,8 +230,26 @@
       <dt>Found a bug?</dt>
       <dd>Please <a href="https://github.com/TetraLogical/screen-reader-HTML-support/issues">report it</a>.</dd>
     </dl>
+
+    <div class="callout" data-callout-variant="bold">
+      <h2 class="text-step-1">Table of contents</h2>
+      <ul>
+        <li><a href="#how-html-elements-are-supported-by-screen-readers">How HTML elements are supported by screen readers</a></li>
+        <li><a href="#about-jaws">About JAWS</a>
+          <ul>
+            <li><a href="#quick-commands">JAWS: quick commands</a></li>
+          </ul>
+        </li>
+        <li><a href="#html-support">HTML Support</a>
+          <ul>
+            <li><a href="#support-legend">Support legend</a></li>
+            <li><a href="#support-matrix">Support matrix</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
     <main class="flow">
-      <h2>How HTML elements are supported by screen readers</h2>
+      <h2 id="how-html-elements-are-supported-by-screen-readers">How HTML elements are supported by screen readers</h2>
       <p>
         Typical HTML element support patterns by screen readers:
       </p>
@@ -266,6 +284,14 @@
       </ul>
       <p>
         <strong>Note:</strong> The combination of patterns supported varies from element to element. Support for (and announcements of) some elements can vary between screen reader software.
+      </p>
+
+      <h2 id="about-jaws">About JAWS</h2>
+      <p>
+        JAWS (Job Access With Speech) is a popular commercial screen reader for Windows. It works with all major browsers including Chrome, Firefox, and Edge.
+      </p>
+      <p>
+        Licences for JAWS must be purchased, but a free functional trial is available to use for up to 40 minutes at a time. 
       </p>
 
       <details aria-labelledby="quick-commands-h"
@@ -313,7 +339,8 @@
         </ul>
       </details>
 
-      <h2>Support legend</h2>
+      <h2 id="html-support">HTML support</h2>
+      <h3 id="support-legend">Support legend</h3>
       <ul>
         <li>
           <svg viewBox="0 0 448 512"
@@ -356,9 +383,10 @@
 
       <div class="table-wrapper"
            role="region"
-           aria-label="Table"
-           tabindex="0">
-        <h3>JAWS HTML Support Table</h3>
+           aria-label="Support matrix"
+           tabindex="0"
+           id="support-matrix">
+        <h3>JAWS HTML support table</h3>
         <table>
           <caption>
             JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) on Windows 11

@@ -230,7 +230,25 @@
       <dd>Please <a href="https://github.com/TetraLogical/screen-reader-HTML-support/issues">report it</a>.</dd>
     </dl>
 
-    <h2>How HTML elements are supported by screen readers</h2>
+    <div class="callout" data-callout-variant="bold">
+      <h2 class="text-step-1">Table of contents</h2>
+      <ul>
+        <li><a href="#how-html-elements-are-supported-by-screen-readers">How HTML elements are supported by screen readers</a></li>
+        <li><a href="#about-narrator">About Windows Narrator</a>
+          <ul>
+            <li><a href="#quick-commands">Windows Narrator: quick commands</a></li>
+          </ul>
+        </li>
+        <li><a href="#html-support">HTML Support</a>
+          <ul>
+            <li><a href="#support-legend">Support legend</a></li>
+            <li><a href="#support-matrix">Support matrix</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <h2 id="how-html-elements-are-supported-by-screen-readers">How HTML elements are supported by screen readers</h2>
     <p>
       Typical HTML element support patterns by screen readers:
     </p>
@@ -265,6 +283,11 @@
     </ul>
     <p>
       <strong>Note:</strong> The combination of patterns supported varies from element to element. Support for (and announcements of) some elements can vary between screen reader software.
+    </p>
+
+    <h2 id="about-narrator">About Windows Narrator</h2>
+    <p>
+      Narrator is the built-in screen reader for Windows. It is available on all Windows devices and works with Microsoft Edge, Chrome, and Firefox.
     </p>
 
     <details aria-labelledby="quick-commands-h"
@@ -329,7 +352,8 @@
       </ul>
     </details>
 
-    <h2>Support legend</h2>
+    <h2 id="html-support">HTML support</h2>
+    <h3 id="support-legend">Support legend</h3>
     <ul>
       <li>
         <svg aria-label="yes"
@@ -382,11 +406,12 @@ mark"
         </svg> means we have found that this feature is not implemented
       </li>
     </ul>
-    <div aria-label="Table"
+    <div aria-label="Support matrix"
          class="table-wrapper"
          role="region"
-         tabindex="0">
-      <h3>Windows Narrator HTML Support Table</h3>
+         tabindex="0"
+         id="support-matrix">
+      <h3>Windows Narrator HTML support table</h3>
       <table>
         <caption>
           Windows Narrator (2025) HTML Support Chrome 142.0.7444.176, Edge 142.0.3595.94, and Firefox 145.0.2
