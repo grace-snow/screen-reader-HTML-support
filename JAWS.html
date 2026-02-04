@@ -46,6 +46,20 @@
     table {
       font-size: x-small
     }
+
+    details {
+      padding: 10px 20px;
+      border: 1px solid grey;
+      margin-block: 1.5em;
+    }
+
+    summary {
+      cursor: pointer;
+    }
+
+    summary:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -206,57 +220,96 @@
   <div class="region wrapper prose flow">
 
     <h1>JAWS HTML Support</h1>
-    <p> A Work <em>in progress</em>: Last updated 28 September 2025. </p>
-    <p><strong>Editor:</strong> Steve Faulkner</p>
-    <p><strong>GitHub Repo:</strong> <a href="https://github.com/TetraLogical/screen-reader-HTML-support">screen-reader-HTML-support</a> </p>
-    <p>Found a bug? Please <a href="https://github.com/TetraLogical/screen-reader-HTML-support/issues">report it</a>.
-    </p>
+    <dl>
+      <dt>A Work <em>in progress</em>:></dt>
+      <dd>Last updated 28 September 2025. </dd>
+      <dt>Editor:</dt>
+      <dd>Steve Faulkner</dd>
+      <dt>GitHub Repo:</dt>
+      <dd><a href="https://github.com/TetraLogical/screen-reader-HTML-support">screen-reader-HTML-support</a></dd>
+      <dt>Found a bug?</dt>
+      <dd>Please <a href="https://github.com/TetraLogical/screen-reader-HTML-support/issues">report it</a>.</dd>
+    </dl>
     <main class="flow">
       <h2>How HTML elements are supported by screen readers</h2>
-      <p> Typical support patterns of HTML elements by screen readers: </p>
+      <p>
+        Typical HTML element support patterns by screen readers:
+      </p>
       <ul>
-        <li> Identification of an element by role as the user moves
-          through the content. </li>
-        <li> Announcement of the text content of an element. </li>
-        <li> Announcement of the start and end of an element. </li>
-        <li> Change in voice as the content of an element is announced. </li>
-        <li> Announcement of an elements accessible name and/or
-          description </li>
-        <li> Announcement of states and properties. </li>
-        <li> Emission of a beep or other sound when an element with a
-          particular state or property receives <a href="http://juicystudio.com/article/making-ajax-work-with-screen-readers.php#jawsvirtual">virtual
-
-
-            focus</a>. </li>
-        <li> Instructions on how to operate interactive elements such as
-          form controls. </li>
-        <li> Navigation of elements by keyboard and “quick access” lists
-          of a particular elements, list items are linked to each
-          instance of an element on the page. </li>
+        <li>
+          Announce roles of elements as the user moves through the content
+        </li>
+        <li>
+          Announce accessible names and/or descriptions of controls
+        </li>
+        <li>
+          Announce the text content of elements
+        </li>
+        <li>
+          Announce the start and end of elements
+        </li>
+        <li>
+          Change in voice or pitch as content is announced (e.g. to signify punctuation)
+        </li>
+        <li>
+          Announce states and properties of elements.
+        </li>
+        <li>
+          Emission of a beep or other sound when an element with a particular state or property receives <a href="http://juicystudio.com/article/making-ajax-work-with-screen-readers.php#jawsvirtual">virtual focus</a>
+        </li>
+        <li>
+          Instructions on how to operate interactive elements such as form controls
+        </li>
+        <li>
+          Keyboard navigation, shortcuts and “quick access” lists showing all instances of particular elements on a page
+        </li>
       </ul>
-      <p> <strong>Note:</strong> The combination of patterns supported varies from element to element and support for a particular element varies between screen reader software. </p>
+      <p>
+        <strong>Note:</strong> The combination of patterns supported varies from element to element. Support for (and announcements of) some elements can vary between screen reader software.
+      </p>
 
-      <details aria-labelledby="jaws-quick-commands-h"
-               id="jaws-quick-commands">
-        <summary id="jaws-quick-commands-h">JAWS: quick commands</summary>
+      <details aria-labelledby="quick-commands-h"
+               id="quick-commands">
+        <summary id="quick-commands-h">JAWS: quick commands</summary>
         <p><strong>JAWS key</strong>: <kbd>Caps Lock</kbd> (or <kbd>Insert</kbd>) by default.</p>
         <ul>
-          <li><strong>Start/stop JAWS</strong>: <kbd>Windows&nbsp;+&nbsp;Ctrl&nbsp;+&nbsp;Enter</kbd></li>
-          <li><strong>Toggle Scan mode</strong>: <kbd>JAWS&nbsp;+&nbsp;Space</kbd> <br>Scan mode must be turned
-            <strong>on</strong> to use other keyboard shortcuts.
+          <li><strong>Start/stop JAWS</strong>: <kbd>JAWS&nbsp;+&nbsp;F4</kbd></li>
+          <li><strong>Toggle between "Reading" and "Forms" mode</strong>: <kbd>JAWS&nbsp;+&nbsp;Z</kbd> <br>Note, the mode changes other keyboard interactions
           </li>
-          <li><strong>Links</strong>: <kbd>K</kbd> (next), <kbd>Shift&nbsp;+&nbsp;K</kbd> (previous), <kbd>JAWS&nbsp;+&nbsp;F7</kbd>
-            (list all); <em>Popular links &amp; page summary</em>: <kbd>JAWS&nbsp;+&nbsp;S</kbd> twice</li>
-          <li><strong>Headings</strong>: <kbd>H</kbd> (next), <kbd>Shift&nbsp;+&nbsp;H</kbd> (previous); <em>Headings list</em>:
-            <kbd>JAWS&nbsp;+&nbsp;F6</kbd>
+          <li><strong>Links</strong>:
+            <ul>
+              <li>
+                <kbd>U</kbd> or <kbd>V</kbd> (next unvisited or visited link)
+              </li>
+              <li>
+                <kbd>Shift&nbsp;+&nbsp;U</kbd> or <kbd>V</kbd> (previous unvisited or visited link)
+              </li>
+              <li>
+                <kbd>JAWS&nbsp;+&nbsp;F7</kbd> (list all links)
+              </li>
           </li>
-          <li><strong>Landmarks/regions</strong>: <em>Landmarks list</em>: <kbd>JAWS&nbsp;+&nbsp;F5</kbd></li>
-          <li><strong>Forms</strong>: <kbd>E</kbd> (next edit), <kbd>Shift&nbsp;+&nbsp;E</kbd> (previous). Press <kbd>Space</kbd>
-            to turn Scan mode off when you need to type; <kbd>Tab</kbd> to move between form fields</li>
-          <li><strong>Lists &amp; tables</strong>: <kbd>I</kbd> / <kbd>Shift&nbsp;+&nbsp;I</kbd> (next/previous list item);
-            <kbd>,</kbd>/<kbd>.</kbd> to jump to start/end of long lists or tables
-          </li>
-          <li><strong>Images/graphics</strong>: <kbd>G</kbd> / <kbd>Shift&nbsp;+&nbsp;G</kbd> to move between images</li>
+        </ul>
+        <li>
+          <strong>Headings</strong>: <kbd>H</kbd> / <kbd>Shift&nbsp;+&nbsp;H</kbd> (next/previous heading), <kbd>JAWS&nbsp;+&nbsp;F6</kbd> (list all)
+        </li>
+        <li><strong>Landmarks/regions</strong>: <kbd>R</kbd> / <kbd>Shift&nbsp;+&nbsp;R</kbd> (next/previous landmark/region), <kbd>Q</kbd> (main landmark)</li>
+        <li><strong>Forms</strong>: <kbd>E</kbd> (next edit), <kbd>Shift&nbsp;+&nbsp;E</kbd> (previous). Press <kbd>Space</kbd>
+          to turn Scan mode off when you need to type; <kbd>Space</kbd> to turn Scan mode off when you need to type; <kbd>Tab</kbd> to move between form fields</li>
+        <li>
+          <strong>Tables</strong>: <kbd>T</kbd> / <kbd>Shift&nbsp;+&nbsp;T</kbd> (next/previous table). <em>Navigate table cells with</em> <kbd>Ctrl&nbsp;+&nbsp;Alt +&nbsp;Arrow&nbsp;keys</kbd>
+        </li>
+        <li>
+          <strong>Lists</strong>:
+          <ul>
+            <li>
+              <kbd>L</kbd> / <kbd>Shift&nbsp;+&nbsp;L</kbd> (next/previous list)
+            </li>
+            <li>
+              <kbd>I</kbd> / <kbd>Shift&nbsp;+&nbsp;I</kbd> (next/previous list item)
+            </li>
+          </ul>
+        </li>
+        <li><strong>Images/graphics</strong>: <kbd>G</kbd> / <kbd>Shift&nbsp;+&nbsp;G</kbd> to move between images</li>
         </ul>
       </details>
 
@@ -273,51 +326,39 @@
           means we have found this feature to be implemented interoperably (across multiple browsers)
         </li>
         <li>
+          <svg viewBox="0 0 512 512"
+               width="20"
+               role="img"
+               aria-label="no"
+               class="no">
+            <use href="#no" />
+          </svg> means we have found that this feature is not implemented
+        </li>
+        <li>
           <svg viewBox="0 0 448 512"
                width="20"
                role="img"
                aria-label="none expected"
                class="noneE">
             <use href="#noneE" />
-          </svg>
-          means the element has no expected semantics.
+          </svg> means the element has no expected semantics.
         </li>
         <li>
           <svg viewBox="0 0 512 512"
                width="20"
-               aria-label="question
-mark"
-               class="unknown"
-               role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415
-2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008
-16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797
-20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-          </svg>
-          means we
-          are unsure whether this feature is supported, this may be due
-          to lack of testing or lack of clarity around what 'support' of
-          this feature is supposed to convey to the user.
-        </li>
-        <li><svg viewBox="0 0 512 512"
-               width="20"
                role="img"
-               aria-label="no"
-               class="no">
-            <use href="#no" />
-          </svg> means we
-          have found that this feature is not implemented</li>
+               aria-label="question mark"
+               class="unknown">
+            <use href="#unknown" />
+          </svg> means we are unsure whether this feature is supported, this may be due to lack of testing or lack of clarity around what 'support' of this feature is supposed to convey to the user.
+        </li>
       </ul>
+
       <div class="table-wrapper"
            role="region"
            aria-label="Table"
            tabindex="0">
+        <h3>JAWS HTML Support Table</h3>
         <table>
           <caption>
             JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) on Windows 11
