@@ -60,6 +60,11 @@
     summary:hover {
       text-decoration: underline;
     }
+
+    .prose :is(figure, table, .callout, .tabs), 
+    .prose :is(figure, table, .callout, .tabs) + * {
+      --flow-space: 2em;
+    }
   </style>
 </head>
 <body>
@@ -290,52 +295,65 @@
       <p>
         JAWS (Job Access With Speech) is a popular commercial screen reader for Windows. It works with all major browsers including Chrome, Firefox, and Edge.
       </p>
-      <p>
+      <p class="mt-m">
         Licences for JAWS must be purchased, but a free functional trial is available to use for up to 40 minutes at a time. 
       </p>
 
       <details aria-labelledby="quick-commands-h"
-               id="quick-commands">
+               id="quick-commands"
+               class="flow"
+               style="--flow-space: var(--space-m);">
         <summary id="quick-commands-h">JAWS: quick commands</summary>
-        <p><strong>JAWS key</strong>: <kbd>Caps Lock</kbd> (or <kbd>Insert</kbd>) by default.</p>
+        <p><strong><kbd>JAWS</kbd> key</strong>: <kbd>Insert</kbd> (or <kbd>Caps Lock</kbd>, configurable) by default.</p>
         <ul>
-          <li><strong>Start/stop JAWS</strong>: <kbd>JAWS&nbsp;+&nbsp;F4</kbd></li>
-          <li><strong>Toggle between "Reading" and "Forms" mode</strong>: <kbd>JAWS&nbsp;+&nbsp;Z</kbd> <br>Note, the mode changes other keyboard interactions
+          <li>
+            <strong>Start/stop JAWS</strong>: <kbd>JAWS&nbsp;+&nbsp;F4</kbd>
           </li>
-          <li><strong>Links</strong>:
+          <li>
+            <strong>Toggle between "Reading" and "Forms" mode</strong>: <kbd>JAWS&nbsp;+&nbsp;Z</kbd> <br><em>Note: The mode changes other keyboard interactions</em>
+          </li>
+          <li>
+            <strong>Read all content</strong>: <kbd>JAWS&nbsp;+&nbsp;↓</kbd>
+          </li>
+          <li>
+            <strong>Stop reading</strong>:  <kbd>Control</kbd>
+          </li>
+          <li><strong>Elements list</strong>: 
             <ul>
-              <li>
-                <kbd>U</kbd> or <kbd>V</kbd> (next unvisited or visited link)
-              </li>
-              <li>
-                <kbd>Shift&nbsp;+&nbsp;U</kbd> or <kbd>V</kbd> (previous unvisited or visited link)
-              </li>
-              <li>
-                <kbd>JAWS&nbsp;+&nbsp;F7</kbd> (list all links)
-              </li>
+              <li><strong>List all links</strong>: <kbd>JAWS&nbsp;+&nbsp;F7</kbd></li>
+              <li><strong>List all headings</strong>: <kbd>JAWS&nbsp;+&nbsp;F6</kbd></li>
+            </ul>
+          <li>
+            <strong>Next/previous link</strong>: <kbd>K</kbd> / <kbd>Shift&nbsp;+&nbsp;K</kbd>
           </li>
-        </ul>
-        <li>
-          <strong>Headings</strong>: <kbd>H</kbd> / <kbd>Shift&nbsp;+&nbsp;H</kbd> (next/previous heading), <kbd>JAWS&nbsp;+&nbsp;F6</kbd> (list all)
-        </li>
-        <li><strong>Landmarks/regions</strong>: <kbd>R</kbd> / <kbd>Shift&nbsp;+&nbsp;R</kbd> (next/previous landmark/region), <kbd>Q</kbd> (main landmark)</li>
-        <li><strong>Forms</strong>: <kbd>E</kbd> (next edit), <kbd>Shift&nbsp;+&nbsp;E</kbd> (previous). Press <kbd>Space</kbd>
-          to turn Scan mode off when you need to type; <kbd>Space</kbd> to turn Scan mode off when you need to type; <kbd>Tab</kbd> to move between form fields</li>
-        <li>
-          <strong>Tables</strong>: <kbd>T</kbd> / <kbd>Shift&nbsp;+&nbsp;T</kbd> (next/previous table). <em>Navigate table cells with</em> <kbd>Ctrl&nbsp;+&nbsp;Alt +&nbsp;Arrow&nbsp;keys</kbd>
-        </li>
-        <li>
-          <strong>Lists</strong>:
-          <ul>
-            <li>
-              <kbd>L</kbd> / <kbd>Shift&nbsp;+&nbsp;L</kbd> (next/previous list)
-            </li>
-            <li>
-              <kbd>I</kbd> / <kbd>Shift&nbsp;+&nbsp;I</kbd> (next/previous list item)
-            </li>
-          </ul>
-        </li>
-        <li><strong>Images/graphics</strong>: <kbd>G</kbd> / <kbd>Shift&nbsp;+&nbsp;G</kbd> to move between images</li>
+          <li>
+            <strong>Next/previous heading</strong>: <kbd>H</kbd> / <kbd>Shift&nbsp;+&nbsp;H</kbd>
+          </li>
+          <li>
+            <strong>Next/previous landmark/region</strong>: <kbd>R</kbd> / <kbd>Shift&nbsp;+&nbsp;R</kbd>
+          </li>
+          <li>
+            <strong>Main landmark</strong>: <kbd>Q</kbd>
+          </li>
+          <li>
+            <strong>Next/previous form (edit) field</strong>: <kbd>E</kbd> / <kbd>Shift&nbsp;+&nbsp;E</kbd>
+          </li>
+          <li><strong>Tables</strong>:
+            <ul>
+              <li><strong>Next/previous table</strong>: <kbd>T</kbd> / <kbd>Shift&nbsp;+&nbsp;T</kbd></li>
+              <li><strong>Navigate table cells</strong>: <kbd>Control&nbsp;+&nbsp;Alt&nbsp;+&nbsp;Arrow&nbsp;keys (→/←/↓/↑)</kbd></li>
+              <li><strong>Start/end of row</strong>: <kbd>Home</kbd> / <kbd>End</kbd></li>
+              <li><strong>Start/end of column</strong>: <kbd>Shift&nbsp;+&nbsp;Home</kbd> / <kbd>Shift&nbsp;+&nbsp;End</kbd></li>
+              <li><strong>Start/end of a table</strong>: <kbd>Control&nbsp;+&nbsp;Home</kbd> / <kbd>Control&nbsp;+&nbsp;End</kbd></li>
+            </ul>
+          </li>
+          <li>
+            <strong>Next/previous list</strong>: <kbd>L</kbd> / <kbd>Shift&nbsp;+&nbsp;L</kbd>
+          </li>
+          <li>
+            <strong>Next/previous list item</strong>: <kbd>I</kbd> / <kbd>Shift&nbsp;+&nbsp;I</kbd>
+          </li>
+          <li><strong>Next/previous graphic</strong>: <kbd>G</kbd> / <kbd>Shift&nbsp;+&nbsp;G</kbd></li>
         </ul>
       </details>
 

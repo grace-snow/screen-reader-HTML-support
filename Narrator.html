@@ -66,6 +66,11 @@
     summary:hover {
       text-decoration: underline;
     }
+
+    .prose :is(figure, table, .callout, .tabs), 
+    .prose :is(figure, table, .callout, .tabs) + * {
+      --flow-space: 2em;
+    }
   </style>
 </head>
 <body>
@@ -230,7 +235,8 @@
       <dd>Please <a href="https://github.com/TetraLogical/screen-reader-HTML-support/issues">report it</a>.</dd>
     </dl>
 
-    <div class="callout" data-callout-variant="bold">
+    <div class="callout"
+         data-callout-variant="bold">
       <h2 class="text-step-1">Table of contents</h2>
       <ul>
         <li><a href="#how-html-elements-are-supported-by-screen-readers">How HTML elements are supported by screen readers</a></li>
@@ -291,7 +297,8 @@
     </p>
 
     <details aria-labelledby="quick-commands-h"
-             id="quick-commands">
+             id="quick-commands"
+             class="flow" >
       <summary id="quick-commands-h">Windows Narrator: quick commands</summary>
       <p><strong><kbd>Narrator</kbd> key</strong>: <kbd>Caps Lock</kbd> (or <kbd>Insert</kbd>) by default.</p>
       <ul>
@@ -299,52 +306,49 @@
           <strong>Start/stop Narrator</strong>: <kbd>Windows&nbsp;+&nbsp;Ctrl&nbsp;+&nbsp;Enter</kbd>
         </li>
         <li>
-          <strong>Toggle Scan mode</strong>: <kbd>Narrator&nbsp;+&nbsp;Space</kbd> <br><em>Note, scan mode must be turned
-            <strong>on</strong> to use other keyboard shortcuts</em>
+          <strong>Toggle "Scan" mode</strong>: <kbd>Narrator&nbsp;+&nbsp;Space</kbd> <br><em>Note: Scan mode must be turned <strong>on</strong> to use other keyboard shortcuts</em>
         </li>
         <li>
-          <strong>List all landmarks/regions</strong>: <kbd>Narrator&nbsp;+&nbsp;F5</kbd>
+          <strong>Elements list</strong>:
+          <ul>
+            <li><strong>List all links</strong>: <kbd>Narrator&nbsp;+&nbsp;F7</kbd></li>
+            <li><strong>List all headings</strong>: <kbd>Narrator&nbsp;+&nbsp;F6</kbd></li>
+            <li><strong>List all landmarks/regions</strong>: <kbd>Narrator&nbsp;+&nbsp;F5</kbd></li>
+          </ul> 
         </li>
         <li>
-          Links:
+          <strong>Next/previous link</strong>: <kbd>K</kbd> / <kbd>Shift&nbsp;+&nbsp;K</kbd>
+        </li>
+        <li>
+          <strong>Next/previous heading</strong>: <kbd>H</kbd> / <kbd>Shift&nbsp;+&nbsp;H</kbd>
+        </li>
+        <li>
+          <strong>Next/previous landmark region</strong>: <kbd>D</kbd> / <kbd>Shift&nbsp;+&nbsp;D</kbd>
+        </li>
+        <li><strong>Main landmark region</strong>: <kbd>N</kbd></li>
+        <li>
+          <strong>Next/previous form (edit) field</strong>: <kbd>E</kbd> / <kbd>Shift&nbsp;+&nbsp;E</kbd>
+          <br><em>Press <kbd>Space</kbd> to turn Scan mode off when you need to type into a field</em>
+        </li>
+        <li>
+          <strong>Tables</strong>: 
           <ul>
             <li>
-              <strong>Next/previous link</strong>: <kbd>K / Shift&nbsp;+&nbsp;K</kbd>
+              <strong>Next/previous table</strong>: <kbd>T</kbd> / <kbd>Shift&nbsp;+&nbsp;T</kbd> 
             </li>
             <li>
-              <strong>List all links</strong>: <kbd>Narrator&nbsp;+&nbsp;F7</kbd>
+              <strong>Navigate table cells</strong>: <kbd>Control&nbsp;+&nbsp;Alt&nbsp;+&nbsp;Arrow&nbsp;keys (→/←/↓/↑)</kbd>
             </li>
             <li>
-              <strong>Popular links &amp; page summary:</strong> <kbd>Narrator&nbsp;+&nbsp;S</kbd> <em>twice</em>
+              <strong>Start/end of a table</strong>: <kbd>,</kbd> / <kbd>.</kbd>
             </li>
           </ul>
         </li>
         <li>
-          Headings:
-          <ul>
-            <li>
-              <strong>Next/previous heading</strong>: <kbd>H / Shift&nbsp;+&nbsp;H</kbd>
-            </li>
-            <li>
-              <strong>List all headings</strong>: <kbd>Narrator&nbsp;+&nbsp;F6</kbd>
-            </li>
-          </ul>
-        <li>
-          <strong>Forms</strong>: <kbd>E</kbd> / <kbd>Shift&nbsp;+&nbsp;E</kbd> (next/previous edit). Press <kbd>Space</kbd> to turn Scan mode off when you need to type; <kbd>Tab</kbd> to move focus between form fields
+          <strong>Next/previous list</strong>: <kbd>L</kbd> / <kbd>Shift&nbsp;+&nbsp;L</kbd>
         </li>
         <li>
-          Lists &amp; tables:
-          <ul>
-            <li>
-              <strong>Next/previous list</strong>: <kbd>L</kbd> / <kbd>Shift&nbsp;+&nbsp;L</kbd>
-            </li>
-            <li>
-              <strong>Next/previous list item</strong>: <kbd>I</kbd> / <kbd>Shift&nbsp;+&nbsp;I</kbd>
-            </li>
-            <li>
-              <strong>Jump to start/end of long lists or tables</strong>: <kbd>,</kbd>/<kbd>.</kbd>
-            </li>
-          </ul>
+          <strong>Next/previous list item</strong>: <kbd>I</kbd> / <kbd>Shift&nbsp;+&nbsp;I</kbd>
         </li>
         <li>
           <strong>Next/previous graphic</strong>: <kbd>G</kbd> / <kbd>Shift&nbsp;+&nbsp;G</kbd>
@@ -365,6 +369,15 @@
         </svg> means we have found this feature to be implemented interoperably (across multiple browsers)
       </li>
       <li>
+        <svg aria-label="no"
+             class="no"
+             role="img"
+             viewbox="0 0 512 512"
+             width="20">
+          <use href="#no"></use>
+        </svg> means we have found that this feature is not implemented
+      </li>
+      <li>
         <svg aria-label="none expected"
              class="noneE"
              role="img"
@@ -374,36 +387,14 @@
         </svg> means the element has no expected semantics.
       </li>
       <li>
-        <svg aria-label="question
-mark"
-             class="unknown"
+        <svg viewBox="0 0 512 512"
+             width="20"
              role="img"
-             viewbox="0 0 512 512"
-             width="20">
-          <path d="M504 256c0
-136.997-111.043 248-248 248S8 392.997 8 256C8 119.083
-119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497
-0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415
-2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008
-16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797
-20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
+             aria-label="question mark"
+             class="unknown">
+          <use href="#unknown" />
         </svg> means we are unsure whether this feature is supported, this may be due to lack of testing or lack of
         clarity around what 'support' of this feature is supposed to convey to the user.
-      </li>
-      <li>
-        <svg aria-label="no"
-             class="no"
-             role="img"
-             viewbox="0 0 512 512"
-             width="20">
-          <use href="#no"></use>
-        </svg> means we have found that this feature is not implemented
       </li>
     </ul>
     <div aria-label="Support matrix"

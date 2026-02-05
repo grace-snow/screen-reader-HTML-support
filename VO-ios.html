@@ -56,6 +56,11 @@
     summary:hover {
       text-decoration: underline;
     }
+
+    .prose :is(figure, table, .callout, .tabs), 
+    .prose :is(figure, table, .callout, .tabs) + * {
+      --flow-space: 2em;
+    }
   </style>
 </head>
 <body>
@@ -283,20 +288,28 @@
       VoiceOver is the built-in screen reader on iOS. It is available on all iPhones and iPads, and can be used with Safari and other browsers.
     </p>
 
+    <div class="callout mt-m" data-callout-variant="">
+      <p>
+        <strong>VoiceOver</strong> doesn't have a concept of "reading" or "applications" modes like some other screen readers. Instead, it uses a combination of gestures/keyboard commands and a "Rotor" menu to navigate and interact with content.
+      </p>
+    </div>
+
     <details aria-labelledby="quick-commands-h"
              id="quick-commands"
-             class="flow">
+             class="flow" >
       <summary id="quick-commands-h">iOS VoiceOver: quick commands</summary>
-      <p>To turn on the <strong>VoiceOver shortcut</strong>, go to <em>Settings > Accessibility > Accessibility Shortcut</em> and select "VoiceOver"</p>
+      <p>
+        To turn on the <strong>VoiceOver shortcut</strong>, go to <em>Settings > Accessibility > Accessibility Shortcut</em> and select "VoiceOver"
+      </p>
       <ul>
         <li>
           <strong>Start/stop VoiceOver</strong>:
           <ul>
             <li>
-              Triple-press the side button, or home button on older devices. (The shortcut must be enabled for this to work.)
+              Triple-press the side button, or home button on older devices. <br><em>(The shortcut must be enabled first)</em>
             </li>
             <li>
-              Or speak "Siri, turn on/off VoiceOver"
+              Speak "Siri, turn on/off VoiceOver"
             </li>
           </ul>
         </li>
@@ -304,22 +317,25 @@
           <strong>Pause/resume announcements</strong>: Tap two fingers anywhere on the screen
         </li>
         <li>
-          <strong>Move between elements</strong>: Swipe left/right with one finger
-        </li>
-        <li>
           <strong>Open the Rotor menu</strong>: Place two fingers on the screen and rotate as if turning a dial to select a navigation setting
         </li>
         <li>
-          <strong>Move between specific elements (headings, lists, form elements etc.)</strong>: After choosing a navigation setting in the Rotor menu, swipe up/down with one finger to move to the next/previous instance
+          <strong>Move between specific elements (headings, lists, form elements etc.)</strong>: After choosing a navigation setting in the Rotor menu, swipe down/up with one finger to move to the next/previous instance
+        </li>
+        <li>
+          <strong>Read next/previous item</strong>: Single-finger swipe right/left
         </li>
         <li>
           <strong>Read all content</strong>: Two-finger swipe up (read from top) / down (read from current location)
         </li>
         <li>
-          <strong>Activate an element</strong>: Double-tap anywhere on the screen
+          <strong>Activate an element</strong>: Single-finger double-tap (anywhere on the screen)
         </li>
         <li>
-          <strong>Scroll</strong>: Swipe up/down with three fingers
+          <strong>Scroll screen</strong>: Three-finger swipe up/down
+        </li>
+        <li>
+          <strong>Search screen</strong>: Two-finger triple-tap <br><em>(Opens a list of all items, including a search field)</em>
         </li>
       </ul>
       <p>

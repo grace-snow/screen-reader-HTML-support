@@ -60,6 +60,11 @@
     summary:hover {
       text-decoration: underline;
     }
+
+    .prose :is(figure, table, .callout, .tabs), 
+    .prose :is(figure, table, .callout, .tabs) + * {
+      --flow-space: 2em;
+    }
   </style>
 </head>
 <body>
@@ -284,55 +289,61 @@
     </p>
 
     <details aria-labelledby="quick-commands-h"
-             id="quick-commands">
+             id="quick-commands"
+             class="flow" >
       <summary id="quick-commands-h">Android TalkBack: quick gestures</summary>
       <p>
-        <strong>Note:</strong> TalkBack uses touch gestures on mobile devices. Multi-finger gestures are available only with TalkBack 9.1+ on supported devices (released in 2021).
+        To turn on one or more of the <strong>TalkBack shortcuts</strong>, go to <em>Settings &gt; Accessibility &gt; TalkBack &gt; TalkBack Shortcut</em>
+      </p>
+      <p>
+        <strong>Note</strong>: Multi-finger gestures are available only with TalkBack 9.1+
       </p>
       <ul>
         <li>
-          <strong>Start/stop TalkBack</strong>: Shortcuts are configurable in <em>Settings &gt; Accessibility</em>:
+          <strong>Start/stop TalkBack</strong>:
           <ul>
-            <li>Press and hold both volume buttons for 3 seconds</li>
-            <li>Swipe up with two fingers from the bottom of the screen (to turn on)</li>
-            <li>Or speak "Hey Google, turn on/off TalkBack" (on supported accounts)</li>
+            <li>
+              Press and hold both volume buttons for 3 seconds <br><em>(The shortcut must be enabled first)</em>
+            </li>
+            <li>
+              Swipe up with two fingers from the bottom of the screen to turn on <br><em>(The shortcut must be enabled first)</em>
+            </li>
+            <li>
+              Speak "Hey Google, turn on/off TalkBack" (if supported)
+            </li>
           </ul>
         </li>
         <li>
-          <strong>TalkBack menu</strong>: Swipe down then right, or up then right (or three-finger tap on supported devices)
+          <strong>Pause/resume announcements</strong>: Two-finger tap
         </li>
         <li>
-          <strong>Reading controls</strong>: Swipe up then down, or down then up (to adjust navigation by headings, links, etc.)
+          <strong>TalkBack menu</strong>: Three-finger tap <br><em>(Or swipe down-right / up-right in a single gesture)</em> 
         </li>
         <li>
-          <strong>Explore by touch</strong>: Drag one finger around the screen to hear items announced
+          <strong>Reading controls</strong>:
+          <ol>
+            <li>
+              Three-finger swipe in any direction <br><em>(or swipe down-up/up-down in a single gesture)</em>
+            </li>
+            <li>
+              Repeat gesture to cycle through reading controls including lines, headings, links, landmarks, controls etc.
+            </li>
+            <li>
+              Once the desired reading control is selected, swipe down/up to move to the next/previous item of that type.
+            </li>
+          </ol>
         </li>
         <li>
-          <strong>Read next/previous item</strong>: Swipe right/left
+          <strong>Read next/previous item</strong>: Single-finger swipe right/left
         </li>
         <li>
-          <strong>Activate element</strong> (link, button, etc.): Double-tap
+          <strong>Read all content</strong>: Two-finger triple-tap
         </li>
         <li>
-          <strong>Pause/resume reading</strong>: Two-finger tap
+          <strong>Activate element (link, button, etc.)</strong>: Single-finger double-tap (anywhere on the screen)
         </li>
         <li>
-          <strong>Read continuously from top</strong>: Open TalkBack menu, select "Read from top" (or two-finger triple-tap)
-        </li>
-        <li>
-          <strong>Headings</strong>: Select "Headings" reading control, then swipe down/up (next/previous)
-        </li>
-        <li>
-          <strong>Links</strong>: Select "Links" reading control, then swipe down/up (next/previous)
-        </li>
-        <li>
-          <strong>Landmarks</strong>: Select "Landmarks" reading control, then swipe down/up (next/previous)
-        </li>
-        <li>
-          <strong>Form controls</strong>: Select "Controls" reading control, then swipe down/up (next/previous)
-        </li>
-        <li>
-          <strong>Scroll</strong>: Two-finger swipe up, down, left, or right
+          <strong>Scroll screen</strong>: Two-finger swipe up, down, left, or right
         </li>
         <li>
           <strong>Search screen</strong>: Swipe left then down

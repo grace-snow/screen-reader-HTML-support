@@ -56,6 +56,11 @@
     summary:hover {
       text-decoration: underline;
     }
+
+    .prose :is(figure, table, .callout, .tabs), 
+    .prose :is(figure, table, .callout, .tabs) + * {
+      --flow-space: 2em;
+    }
   </style>
 </head>
 <body>
@@ -284,62 +289,63 @@
     </p>
 
     <details aria-labelledby="quick-commands-h"
-             id="quick-commands">
+             id="quick-commands"
+             class="flow" >
       <summary id="quick-commands-h">NVDA: quick commands</summary>
-      <p><strong>NVDA modifier key</strong>: <kbd>Insert</kbd> (or <kbd>Caps Lock</kbd>, configurable) by default.</p>
+      <p><strong><kbd>NVDA</kbd> key</strong>: <kbd>Insert</kbd> (or <kbd>Caps Lock</kbd>, configurable) by default.</p>
       <ul>
         <li>
           <strong>Start/stop NVDA</strong>: <kbd>Control&nbsp;+&nbsp;Alt&nbsp;+&nbsp;N</kbd> (start) / <kbd>NVDA&nbsp;+&nbsp;Q</kbd> (stop)
         </li>
         <li>
-          <strong>Toggle between Browse and Focus mode</strong>: <kbd>NVDA&nbsp;+&nbsp;Space</kbd>
+          <strong>Toggle between "Browse" and "Focus" (forms) mode</strong>: <kbd>NVDA&nbsp;+&nbsp;Space</kbd>
         </li>
         <li>
-          <strong>Read all content</strong>: <kbd>NVDA&nbsp;+&nbsp;Down&nbsp;Arrow</kbd> (or <kbd>Numpad&nbsp;+</kbd>)
+          <strong>Read all content</strong>: <kbd>NVDA&nbsp;+&nbsp;↓</kbd>
         </li>
         <li>
           <strong>Stop reading</strong>: <kbd>Control</kbd>
         </li>
         <li>
-          <strong>Open elements list</strong>: <kbd>NVDA&nbsp;+&nbsp;F7</kbd>
+          <strong>Elements list</strong>: <kbd>NVDA&nbsp;+&nbsp;F7</kbd>
         </li>
         <li>
-          <strong>Links</strong>: <kbd>K</kbd> / <kbd>Shift&nbsp;+&nbsp;K</kbd> (next/previous link); <kbd>U</kbd> / <kbd>Shift&nbsp;+&nbsp;U</kbd> (next/previous unvisited); <kbd>V</kbd> / <kbd>Shift&nbsp;+&nbsp;V</kbd> (next/previous visited)
+          <strong>Next/previous link</strong>: <kbd>K</kbd> / <kbd>Shift&nbsp;+&nbsp;K</kbd>
         </li>
         <li>
-          <strong>Headings</strong>: <kbd>H</kbd> / <kbd>Shift&nbsp;+&nbsp;H</kbd> (next/previous heading); <kbd>1</kbd>-<kbd>6</kbd> (by level)
+          <strong>Next/previous heading</strong>: <kbd>H</kbd> / <kbd>Shift&nbsp;+&nbsp;H</kbd>
         </li>
         <li>
-          <strong>Landmarks/regions</strong>: <kbd>D</kbd> / <kbd>Shift&nbsp;+&nbsp;D</kbd> (next/previous landmark)
+          <strong>Next/previous heading by level</strong>: <kbd>1</kbd>-<kbd>6</kbd> / <kbd>Shift&nbsp;+&nbsp;1</kbd>-<kbd>6</kbd>
         </li>
         <li>
-          <strong>Forms</strong>:
+          <strong>Next/previous landmark/region</strong>: <kbd>D</kbd> / <kbd>Shift&nbsp;+&nbsp;D</kbd>
+        </li>
+        <li>
+          <strong>Next/previous form field</strong>: <kbd>F</kbd> / <kbd>Shift&nbsp;+&nbsp;F</kbd>
+        </li>
+        <li>
+          <strong>Tables</strong>:
           <ul>
             <li>
-              <strong>Form fields</strong>: <kbd>F</kbd> / <kbd>Shift&nbsp;+&nbsp;F</kbd> (next/previous form field)
+              <strong>Next/previous table</strong>: <kbd>T</kbd> / <kbd>Shift&nbsp;+&nbsp;T</kbd> 
             </li>
             <li>
-              <strong>Buttons</strong>: <kbd>B</kbd> / <kbd>Shift&nbsp;+&nbsp;B</kbd> (next/previous button)
+              <strong>Navigate table cells</strong>: <kbd>Control&nbsp;+&nbsp;Alt&nbsp;+&nbsp;Arrow&nbsp;keys</kbd>
             </li>
             <li>
-              <strong>Checkboxes</strong>: <kbd>X</kbd> / <kbd>Shift&nbsp;+&nbsp;X</kbd> (next/previous checkbox)
+              <strong>Start of a table (or list)</strong>: <kbd>Shift&nbsp;+&nbsp;,</kbd>
             </li>
-            <li>
-              <strong>Combo boxes</strong>: <kbd>C</kbd> / <kbd>Shift&nbsp;+&nbsp;C</kbd> (next/previous combo box)
-            </li>
-            <li>
-              <strong>Radio buttons</strong>: <kbd>R</kbd> / <kbd>Shift&nbsp;+&nbsp;R</kbd> (next/previous radio button)
-            </li>
-          </ul>
+          </ul> 
         </li>
         <li>
-          <strong>Tables</strong>: <kbd>T</kbd> / <kbd>Shift&nbsp;+&nbsp;T</kbd> (next/previous table); <kbd>Control&nbsp;+&nbsp;Alt&nbsp;+&nbsp;Arrow&nbsp;keys</kbd> to navigate cells
+          <strong>Next/previous list</strong>: <kbd>L</kbd> / <kbd>Shift&nbsp;+&nbsp;L</kbd>
         </li>
         <li>
-          <strong>Lists</strong>: <kbd>L</kbd> / <kbd>Shift&nbsp;+&nbsp;L</kbd> (next/previous list); <kbd>I</kbd> / <kbd>Shift&nbsp;+&nbsp;I</kbd> (next/previous list item)
+          <strong>Next/previous list item</strong>: <kbd>I</kbd> / <kbd>Shift&nbsp;+&nbsp;I</kbd>
         </li>
         <li>
-          <strong>Images/graphics</strong>: <kbd>G</kbd> / <kbd>Shift&nbsp;+&nbsp;G</kbd> (next/previous graphic)
+          <strong>Next/previous graphic</strong>: <kbd>G</kbd> / <kbd>Shift&nbsp;+&nbsp;G</kbd>
         </li>
       </ul>
     </details>

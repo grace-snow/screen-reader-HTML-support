@@ -56,6 +56,11 @@
     summary:hover {
       text-decoration: underline;
     }
+
+    .prose :is(figure, table, .callout, .tabs), 
+    .prose :is(figure, table, .callout, .tabs) + * {
+      --flow-space: 2em;
+    }
   </style>
 </head>
 <body>
@@ -282,15 +287,15 @@
     <p>
       VoiceOver is the built-in screen reader on macOS. It is available on all Mac computers and although it is designed to work with Safari can be used with Chrome and Firefox.
     </p>
-    <div class="callout"
-         data-callout-variant="">
+    <div class="callout mask-t-from-20%" data-callout-variant="">
       <p>
         <strong>VoiceOver</strong> doesn't have a concept of "reading" or "applications" modes like some other screen readers. Instead, it uses a combination of keyboard commands and a "Rotor" menu to navigate and interact with content.
       </p>
     </div>
 
     <details aria-labelledby="quick-commands-h"
-             id="quick-commands">
+             id="quick-commands"
+             class="flow" >
       <summary id="quick-commands-h">Mac VoiceOver: quick commands</summary>
       <p><strong><kbd>VO</kbd> key</strong>: <kbd>Control&nbsp;+&nbsp;Option</kbd></p>
       <ul>
@@ -328,7 +333,7 @@
           <strong>Next/previous table</strong>: <kbd>VO&nbsp;+&nbsp;Command&nbsp;+&nbsp;T / Shift&nbsp;+&nbsp;T</kbd>
         </li>
         <li>
-          <strong>Navigate table cells</strong>: <kbd>VO&nbsp;+ Arrow keys (→/←/↓/↑) </kbd>
+          <strong>Navigate table cells</strong>: <kbd>VO&nbsp;+&nbsp;Arrow&nbsp;keys (→/←/↓/↑)</kbd>
         </li>
         <li>
           <strong>Next/previous list</strong>: <kbd>VO&nbsp;+&nbsp;Command&nbsp;+&nbsp;X / Shift&nbsp;+&nbsp;X</kbd>
